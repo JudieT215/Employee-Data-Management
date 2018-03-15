@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>NYT Article Search</title>
+    <title>Employee Data Management</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
@@ -41,17 +41,19 @@
                     <div class="panel-heading">
                         <h4>Current Employees</h4>
                     </div>
-                    <div class="panel-body">
-                        <h4>* Keyword</h4>
-                      <table>
-                          <th>
-                          </th>
-                          <tr>
-
-                          </tr>
-
-
-                          </table>
+                    <div class="panel-body" >
+                    
+                        <table class="table table-hover" id="table-add" >
+                            <tr>
+                                <th>Employee Name</th> 
+                                <th>Role</th>
+                                <th>Age</th>
+                                <th>Start Date</th>
+                                <th>Monthly rate</th>
+                                <th>Total Billed ($)</th>
+                            </tr>
+            
+                        </table>
                     </div>
                 </div>
                 <!-- /.panel -->
@@ -68,6 +70,34 @@
                     </div>
                     <div class="panel-body">
                         <div id="add-employee">
+                            <form>
+                                <!--Employee Name-->
+                                <div class="form-group">
+                                    <label for="Employee Name">Employee Name</label>
+                                    <input type="text" class="form-control" id="employeeName" placeholder="Employee Name">
+                                </div>
+                                <!--Role-->
+                                <div class="form-group">
+                                    <label for="Role">Role</label>
+                                    <input type="text" class="form-control" id="role" placeholder="Role">
+                                </div>
+                                <!--Age-->
+                                <div class="form-group"> 
+                                    <label for="Age">Age</label>
+                                    <input type="text" class="form-control" id="age" placeholder="Age">
+                                </div>
+                                <!--Start Date -->
+                                <div class="form-group"> 
+                                    <label for="Age">Start Date (DD/MM/YY) ex.01/01/89</label>
+                                    <input type="text" class="form-control" id="start-date" placeholder="Start Date">
+                                </div>
+                                 <div class="form-group">
+                                    <label for="Age">Monthly Rate</label>
+                                    <input type="text" class="form-control" id="Monthly-date" placeholder="Monthly Rate">
+                                </div>
+
+                                <button type="submit" class="btn btn-primary" id="submitEmployee" >Submit</button>
+                            </form>
 
                         </div>
                     </div>

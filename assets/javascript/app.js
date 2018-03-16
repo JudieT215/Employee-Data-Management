@@ -36,6 +36,8 @@ $(document).ready(function() {
             monthlyRate: monthlyRate,
             dateAdded: firebase.database.ServerValue.TIMESTAMP
         });
+
+        createRow();
     });
 
     database.ref().on("child_added", function(childSnapshot) {
@@ -48,4 +50,21 @@ $(document).ready(function() {
     }, function(errorObject) {
         console.log("Errors handled: " + errorObject.code);
     });
+
+    var createRow = function() {
+        // Get reference to existing tbody element, create a new table row element
+        var tBody = $("tbody");
+        var tRow = $("<tr>");
+  
+        // Methods run on jQuery selectors return the selector they we run on
+        // This is why we can create and save a reference to a td in the same statement we update its text
+        var nameTd = $("<td>").text(childSnapshot.val().name);
+        console.log(nameTd);
+        var roleTd = $("<td>").text(childSnapshot.val().role);
+        // var actorsTd = $("<td>").text(data.Actors);
+        // Append the newly created table data to the table row
+        tRow.append(nameTd, roleTd);
+        // Append the table row to the table body
+        $("tBody").append(tRow);
+    };
 });

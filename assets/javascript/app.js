@@ -26,6 +26,16 @@ $(document).ready(function() {
     monthlyRate = $("#Monthly-date")
       .val()
       .trim();
+
+    // Code for handling the push
+    database.ref().push({
+        name: name,
+        role: role,
+        age: age,
+        startDate: startDate,
+        monthlyRate: monthlyRate,
+        dateAdded: firebase.database.ServerValue.TIMESTAMP
+      });
   });
 
   dataRef.ref().on("child_added", function(childSnapshot) {
